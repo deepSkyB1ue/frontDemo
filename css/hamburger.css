@@ -1,0 +1,49 @@
+/** hamburger **/
+.hamburger{
+    /*height: 50px;*/
+    margin: 10px auto 25px;
+}
+
+.hamburger:hover{
+    cursor: pointer;
+}
+
+.hamburger .line{
+    width: 15px;
+    height: 3px;
+    background-color: #1976D2;
+    display: block;
+    margin: 3px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    border-radius: 50px;
+}
+
+.hamburger.active .line{
+    margin: 3px 0 3px 15px;
+}
+
+.hamburger.active .line:nth-child(1),
+.hamburger.active .line:nth-child(3){
+    width: 13px;
+    height: 3px;
+}
+.hamburger.active .line:nth-child(2){
+    display: none;
+}
+
+.hamburger.active .line:nth-child(1){
+    -webkit-transform: translateX(0px) translateY(-1px) rotate(-45deg);
+    -ms-transform: translateX(0px) translateY(-1px) rotate(-45deg);
+    -o-transform: translateX(0px) translateY(-1px) rotate(-45deg);
+    transform: translateX(0px) translateY(-1px) rotate(-45deg);
+    stroke-linecap:round;stroke-miterlimit:10;
+}
+
+.hamburger.active .line:nth-child(3){
+    -webkit-transform: translateX(0px) translateY(1px) rotate(45deg);
+    -ms-transform: translateX(0px) translateY(1px) rotate(45deg);
+    -o-transform: translateX(0px) translateY(1px) rotate(45deg);
+    transform: translateX(0px) translateY(1px) rotate(45deg);
+}

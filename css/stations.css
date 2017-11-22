@@ -1,0 +1,127 @@
+@keyframes warn {
+    0% {
+        transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+    50% {
+        transform: scale(0.1);
+        opacity: 0.5;
+    }
+    75% {
+        transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes "warn" {
+    0% {
+        -webkit-transform: scale(0);
+        opacity: 0.0;
+    }
+    25% {
+        -webkit-transform: scale(0);
+        opacity: 0.3;
+    }
+    50% {
+        -webkit-transform: scale(0.1);
+        opacity: 0.5;
+    }
+    75% {
+        -webkit-transform: scale(0.5);
+        opacity: 0.8;
+    }
+    100% {
+        -webkit-transform: scale(1);
+        opacity: 1;
+    }
+}
+.stationDiv{
+    position: absolute;
+    height: 60px;
+    width: 100%;
+    top: 400px;
+    left: 200px;
+}
+
+.stations{
+    position: absolute;
+    height: 20px;
+    left: 50px;
+}
+.stationsName{
+    position: absolute;
+    height: 40px;
+    top: 20px;
+    left: 25px;
+}
+.stationName{
+    padding-left: 27px;
+    padding-right: 27px;
+    display: inline-block;
+    text-align:center;
+    float: left;
+    width: 20px;
+    word-wrap:break-word
+}
+.station{
+    border: 0px;
+    display: inline-block;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    background: darkgray;
+    float:left;
+    cursor: pointer;
+}
+.station_actived{
+    display: inline-block;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    background: darkgreen;
+    float:left;
+    cursor: pointer;
+}
+.station_actived2{
+    display: inline-block;
+    border-radius: 18px;
+    width: 18px;
+    height: 18px;
+    background: darkgreen;
+    float:left;
+    cursor: pointer;
+
+    border: 1px solid darkgreen;
+    -webkit-border-radius: 18px;
+    -moz-border-radius: 18px;
+    -webkit-animation: warn 1s ease-out;
+    -moz-animation: warn 1s ease-out;
+    animation: warn 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.line{
+    margin-top: 8px;
+    border: 2px solid darkgray;
+    display: inline-block;
+    height: 0px;
+    width: 50px;
+    float:left
+}
+.line_actived{
+    margin-top: 8px;
+    border: 2px solid darkgreen;
+    display: inline-block;
+    height: 0px;
+    width: 50px;
+    float:left
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iView-Map</title>
+
+    <link rel="shortcut icon" href="assets/gaea/favicon.png"/>
+    <link rel="stylesheet" href="./libs/gm/gl/gl.css"/>
+    <link rel="stylesheet" href="./libs/iview/iview.css"/>
+    <link rel="stylesheet" href="./css/hamburger.css"/>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="stylesheet" href="./css/search.css"/>
+
+    <script type="text/javascript" src="./libs/gm/gl/gl.js"></script>
+    <script type="text/javascript" src="./libs/iview/iview.min.js"></script>
+
+</head>
+<body>
+<div id="app">
+    <div class="header">
+        <div class="header-logo">
+            <img src="./assets/gaea/logo.svg" alt="logo">
+        </div>
+
+        <div class="header-aside">
+            <div class="header-aside-icon">
+                <gaea-badge :dot="header.notify">
+                    <gaea-icon type="android-notifications-none" size="18"></gaea-icon>
+                </gaea-badge>
+            </div>
+            <div class="header-aside-icon">
+                <gaea-icon type="ios-cog-outline" size="18"></gaea-icon>
+            </div>
+            <div class="header-aside-icon">
+                <gaea-icon type="ios-person-outline" size="18"></gaea-icon>
+                <span class="header-aside-username">{{header.username}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="nav" :style="{width:navWidth+'px'}">
+        <div class="hamburger" :class="{active:nav.open}" @click="toggleNav">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+        <gaea-menu class="nav-menu" :class="{'nav-hide-text': !nav.open}" theme="light" :width="navWidth+'px'"
+                   v-on:on-select="navSelect" active-name="article" :open-names="['1']" accordion>
+            <gaea-submenu name="1">
+                <template slot="title">
+                    <gaea-icon type="ios-navigate" size="24"></gaea-icon>
+                    <span class="nav-text">内容管理</span>
+                </template>
+
+                <gaea-menu-item name="module5">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">文章管理</span>
+                </gaea-menu-item>
+                <gaea-menu-item name="comment">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">评论管理</span>
+                </gaea-menu-item>
+                <gaea-menu-item name="report">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">举报管理</span>
+                </gaea-menu-item>
+            </gaea-submenu>
+            <gaea-submenu name="2">
+                <template slot="title">
+                    <gaea-icon type="ios-navigate" size="24"></gaea-icon>
+                    <span class="nav-text">内容管理</span>
+                </template>
+
+                <gaea-menu-item name="home">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">文章管理</span>
+                </gaea-menu-item>
+                <gaea-menu-item name="home2">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">评论管理</span>
+                </gaea-menu-item>
+                <gaea-menu-item name="home3">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">举报管理</span>
+                </gaea-menu-item>
+
+            </gaea-submenu>
+            <gaea-submenu name="3">
+                <template slot="title">
+                    <gaea-icon type="ios-navigate" size="24"></gaea-icon>
+                    <span class="nav-text">内容管理</span>
+                </template>
+
+                <gaea-menu-item name="home3">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">文章管理</span>
+                </gaea-menu-item>
+                <gaea-menu-item name="home32">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">评论管理</span>
+                </gaea-menu-item>
+                <gaea-menu-item name="home33">
+                    <gaea-icon type="ios-navigate" size="18"></gaea-icon>
+                    <span class="nav-text">举报管理</span>
+                </gaea-menu-item>
+            </gaea-submenu>
+        </gaea-menu>
+    </div>
+
+    <div class="content" :style="{marginLeft:navWidth+'px'}">
+        <div id="map"></div>
+    </div>
+
+    <div id="popup">
+        <div v-bind:is="popupComs.index1.comName" ref="index1"></div>
+        <div v-bind:is="popupComs.index2.comName" ref="index2"></div>
+        <div v-bind:is="popupComs.index3.comName" ref="index3"></div>
+        <div v-bind:is="popupComs.index4.comName" ref="index4"></div>
+        <div v-bind:is="popupComs.index5.comName" ref="index5"></div>
+        <div v-bind:is="popupComs.index6.comName" ref="index6"></div>
+        <div v-bind:is="popupComs.index7.comName" ref="index7"></div>
+        <div v-bind:is="popupComs.index8.comName" ref="index8"></div>
+        <div v-bind:is="popupComs.index9.comName" ref="index9"></div>
+        <div v-bind:is="popupComs.index10.comName" ref="index10"></div>
+    </div>
+</div>
+
+
+
+<script src="libs/traceur-compiler/bin/traceur.js"></script>
+<script src="libs/traceur-compiler/bin/BrowserSystem.js"></script>
+<script src="libs/traceur-compiler/bin/bootstrap.js"></script>
+<script src="js/map.js" type="module"></script>
+<script src="js/init-component.js" type="module"></script>
+
+</body>
+</html>

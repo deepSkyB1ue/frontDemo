@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="libs/jquery/js/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+<div>
+    <button id="but1" onclick="openNewWindow()">button1</button>
+</div>
+<script>
+    var newOpen;
+    function openNewWindow() {
+        window.open('http://www.baidu.com').onload(function () {
+            console.log('started load new window');
+        });
+        console.log('start load new window');
+    }
+
+</script>
+</body>
+</html>

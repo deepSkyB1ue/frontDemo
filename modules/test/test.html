@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing</title>
+    <style>
+        .demo1,.demo2,.demo3{
+            width:200px;
+            height:200px;
+            background-color: #2277AD;
+            margin:20px;
+        }
+        .demo1{
+            box-sizing: content-box;
+            border:30px solid #12D732;
+            padding:10px;
+
+        }
+        .demo2{
+            box-sizing: border-box;
+            border:30px solid #12D732;
+            padding:10px;
+        }
+        .demo3{
+            box-sizing: padding-box;
+            border:30px solid #12D732;
+            padding:10px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="demo1">
+        我是盒子内部的内容啊!!
+    </div>
+    <div class="demo2">
+        我是盒子内部的内容啊!!
+    </div>
+    <div class="demo3">
+        我是盒子内部的内容啊!!
+    </div>
+</body>
+</html>
