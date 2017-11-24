@@ -7,30 +7,27 @@
 </template>
 
 <script>
-    module.exports = {
-        props: ['paramData'],
-        data: function() {
-            return {
-                who: 'home'
-            }
-        },
-        methods:{
-            showMsg:function () {
-                /*VueScript2.load('js/test.js').then(function () {
+module.exports = {
+    props: ['paramData'],
+    data: function() {
+        return {
+            who: 'home',
+        };
+    },
+    methods: {
+        showMsg: function() {
+            /*VueScript2.load('js/test.js').then(function () {
                     showAbc();
                 });*/
-            }
         },
-        mounted:function () {
-        },
-        beforeDestroy: function () {
-        }
-
-    }
+    },
+    mounted: function() {},
+    beforeDestroy: function() {},
+};
 </script>
 
 <style>
-    .hello {
-        background-color: #ffe;
-    }
+.hello {
+    background-color: #ffe;
+}
 </style>
